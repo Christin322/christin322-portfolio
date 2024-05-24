@@ -3,7 +3,7 @@ import logo from './logo.svg';
 // import './App.css';
 // import Pages from './Pages';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, IconButton, Tooltip, Typography } from '@mui/material';
 import { useScroll, motion } from 'framer-motion';
 import Exploded from './assets/exploded.svg';
 import LivingRoom from './assets/livingRoom.svg';
@@ -14,6 +14,7 @@ import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import Github from './assets/square-github';
 
 import CircleIcon from '@mui/icons-material/Circle';
+import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -258,17 +259,46 @@ function AboutMe() {
                 alignItems: 'center',
               }}
             >
-              <IconButton sx={{ height: '3.5rem', width: '3.5rem' }}>
-                <Github />
-              </IconButton>
-              <IconButton sx={{ height: '3.5rem', width: '3.5rem' }}>
-                <LinkedinPlain color="white" size="100%" />
-              </IconButton>
-              <IconButton sx={{ height: '3.5rem', width: '3.5rem' }}>
-                <EmailRoundedIcon
-                  sx={{ color: 'white', width: '100%', height: '100%' }}
-                />
-              </IconButton>
+              <Tooltip title="Github" placement="top">
+                <IconButton
+                  sx={{ height: '3.5rem', width: '3.5rem' }}
+                  href="https://github.com/Christin322"
+                  target="_blank"
+                >
+                  <Github />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="LinkedIn" placement="top">
+                <IconButton
+                  sx={{ height: '3.5rem', width: '3.5rem' }}
+                  href="https://www.linkedin.com/in/christine-phung-060120b3/"
+                  target="_blank"
+                >
+                  <LinkedinPlain color="white" size="100%" />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Resume" placement="top">
+                <IconButton
+                  sx={{ height: '3.5rem', width: '3.5rem' }}
+                  href="./resume.pdf"
+                  target="_blank"
+                >
+                  <ArticleRoundedIcon
+                    sx={{ color: 'white', width: '100%', height: '100%' }}
+                  />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Email" placement="top">
+                <IconButton
+                  sx={{ height: '3.5rem', width: '3.5rem' }}
+                  href="mailto:christine.phuong@hotmail.com"
+                  target="_blank"
+                >
+                  <EmailRoundedIcon
+                    sx={{ color: 'white', width: '100%', height: '100%' }}
+                  />
+                </IconButton>
+              </Tooltip>
             </Box>
 
             <Typography
