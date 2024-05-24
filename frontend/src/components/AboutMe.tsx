@@ -56,7 +56,7 @@ function AboutMe() {
         <Box
           id="about-me-container"
           sx={{
-            gridRow: '3/8',
+            gridRow: '2/8',
             gridColumn: '4/9',
             bgcolor: 'black',
             boxSizing: 'border-box',
