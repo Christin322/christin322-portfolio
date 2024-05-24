@@ -65,7 +65,7 @@ function AboutMe() {
         ></Box>
         <Box
           sx={{
-            gridRow: '2/4',
+            gridRow: '1/3',
             gridColumn: '4/9',
             display: 'flex',
             justifyContent: 'center',
@@ -88,7 +88,7 @@ function AboutMe() {
         </Box>
         <Box
           sx={{
-            gridRow: '4/7',
+            gridRow: '3/7',
             gridColumn: '4/9',
             boxSizing: 'border-box',
             paddingX: '5rem',
