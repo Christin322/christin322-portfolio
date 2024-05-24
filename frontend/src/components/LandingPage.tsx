@@ -32,7 +32,7 @@ const LandingPage = () => {
   return (
     <>
       <Box
-        id="landing-section-background"
+        id="HOME"
         sx={{
           width: '100vw',
           height: '90vh',
@@ -93,7 +93,9 @@ const LandingPage = () => {
               PHUNG
             </Typography>
 
-            <RotatingText></RotatingText>
+            <Box>
+              <RotatingText></RotatingText>
+            </Box>
           </Box>
           <Box
             id="house-image"
@@ -194,7 +196,17 @@ const LandingPage = () => {
               PHUNG
             </Typography>
 
-            <RotatingText></RotatingText>
+            <Box
+              height={'fit-content'}
+              onMouseEnter={() => {
+                setIsHovered(true);
+              }}
+              onMouseLeave={() => {
+                setIsHovered(false);
+              }}
+            >
+              <RotatingText></RotatingText>
+            </Box>
           </Box>
           {/* fix the masking for this */}
           <Box

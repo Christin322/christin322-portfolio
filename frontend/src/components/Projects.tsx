@@ -14,15 +14,17 @@ import ProjectTitle from './ProjectTitle';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import React, { useRef } from 'react';
-import { Airbrb, Dungeonmania, EduSpace, Seams } from './ProjectInfo';
+import { Airbrb, Dungeonmania, EduSpace, Slackr } from './ProjectInfo';
 import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded';
 import Grid from '@mui/material/Grid';
+import OpenIcon from './assets/OpenIcon';
+import { Fade } from 'react-awesome-reveal';
 
 const projects = [
   { id: 'eduspace', name: 'EduSpace', info: EduSpace },
   { id: 'airbrb', name: 'Airbrb', info: Airbrb },
   { id: 'dungeonmania', name: 'Dungeonmania', info: Dungeonmania },
-  { id: 'seams', name: 'Seams', info: Seams },
+  { id: 'slackr', name: 'Slackr', info: Slackr },
 ];
 const useParallax = (value: MotionValue<number>, distance: number) => {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -42,12 +44,11 @@ const Projects = () => {
     target: ref,
     offset: ['0 2', '1.33 1'],
   });
-  const projectNames = ['EduSpace', 'Airbrb', 'Dungeonmania', 'Seams'];
 
   //   console.log(scrollYProgress);
   return (
     <Box
-      id="projects-section"
+      id="PROJECTS"
       sx={{
         display: 'flex',
         // flexDirection: 'column',
@@ -58,107 +59,85 @@ const Projects = () => {
         // alignItems: 'top',
         // alignItems: 'center',
         boxSizing: 'border-box',
+        paddingX: '10rem',
         // position: 'sticky',
         // top: 0,
       }}
     >
+      {/* have two grids 
+      one for the back box and the titles then the other for the project info */}
       {/* container for the info and the titles */}
+
       <Box
         sx={{
-          width: '90rem',
-          display: 'flex',
-          justifyContent: 'end',
-          position: 'relative',
-          gap: '3rem',
+          height: '70vh',
+          width: '100%',
+          bgcolor: '#F4F1EC',
+          display: 'grid',
+          boxSizing: 'border-box',
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          gridTemplateRows: 'repeat(5, 1fr)',
+          position: 'sticky',
+          top: '15vh',
+          mb: '15vh',
         }}
       >
         <Box
           sx={{
-            width: '100%',
-            height: '70vh',
-            position: 'sticky',
-            top: '15vh',
-            mb: '15vh',
+            bgcolor: 'black',
+            gridRow: '1/6',
+            gridColumn: '2/6',
+            borderRadius: '4rem',
           }}
-        >
-          <Box
-            sx={{
-              bgcolor: 'black',
-              width: '50vw',
-              height: '100%',
-              borderRadius: '3rem',
-              boxSizing: 'border-box',
+        ></Box>
 
-              marginLeft: 'auto',
-              // left: '20vh',
-            }}
-          ></Box>
-          {/* default is 12 columns */}
-          <Grid
-            container
+        <Box sx={{ gridRow: '2', gridColumn: '1/6' }}>
+          <Typography
+            variant="h1"
             sx={{
-              position: 'absolute',
-              top: '12%',
+              color: '#F4F1EC',
+              mixBlendMode: 'exclusion',
+              fontWeight: 'bold',
+              // zIndex: '10',
             }}
           >
-            <Grid item xs={12}>
-              <Typography
-                variant="h1"
-                sx={{
-                  color: 'white',
-                  mixBlendMode: 'difference',
-                  fontWeight: 'bold',
-                  pb: '1rem',
-                  // zIndex: '10',
-                }}
-              >
-                PROJECTS
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              {projects.map((project) => (
-                <project.info id={project.id} key={project.id} />
-              ))}
-            </Grid>
-          </Grid>
-          {/* <Box
-            sx={{
-              width: '100%',
-              position: 'absolute',
-              top: '20%',
-              pr: '5rem',
-              boxSizing: 'border-box',
-              marginRight: '100px',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            <Typography
-              variant="h1"
-              sx={{
-                color: 'white',
-                mixBlendMode: 'difference',
-                fontWeight: 'bold',
-                pb: '1rem',
-                // zIndex: '10',
-              }}
-            >
-              PROJECTS
-            </Typography>
-            <Box sx={{ position: 'relative' }}>
-              {projects.map((project) => (
-                <project.info id={project.id} key={project.id} />
-              ))}
-            </Box>
-          </Box> */}
+            PROJECTS
+          </Typography>
         </Box>
-        {/* <Box sx={{}}>
-          {[1, 2, 3, 4, 5].map((image) => (
-            <ProjectInfo />
-          ))}
-        </Box> */}
+        <Box sx={{ gridRow: '3/5', gridColumn: '1/6' }}>
+          <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+            {projects.map((project) => (
+              <project.info id={project.id} key={project.id} />
+            ))}
+          </Box>
+        </Box>
+        <Box sx={{ gridRow: '5', gridColumn: '5' }}>
+          <IconButton
+            aria-label="open-project"
+            sx={{ width: '100%', height: '100%' }}
+          >
+            <LaunchRoundedIcon
+              sx={{
+                width: '70%',
+                height: '100%',
+                color: '#B49EEB',
 
-        <List sx={{ mt: '50vh', width: '20vw' }}>
+                // background:
+                //   'linear-gradient(90deg, rgba(118,136,199,1) 0%, rgba(128,102,195,1) 100%);',
+              }}
+            />
+            {/* <OpenIcon /> */}
+          </IconButton>
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          height: '100vh',
+          width: '20rem',
+          boxSizing: 'border-box',
+        }}
+      >
+        <List sx={{ mt: '50vh', width: '10vw', pl: '4rem' }}>
           {projects.map((project) => (
             <ListItem
               sx={{ listStyleType: 'none', mb: '3rem' }}
@@ -169,6 +148,7 @@ const Projects = () => {
           ))}
         </List>
       </Box>
+
       {/* columns */}
       {/* <Box sx={{ bgcolor: 'blue', width: '100%', height: '100%' }}>
         <Box

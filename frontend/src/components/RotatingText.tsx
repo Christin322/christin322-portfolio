@@ -13,7 +13,7 @@ const items = [
   },
   {
     id: 3,
-    content: 'idk',
+    content: 'A Visual Design Appreciator',
   },
 ];
 

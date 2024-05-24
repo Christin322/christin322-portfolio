@@ -24,6 +24,8 @@ import { JavascriptPlain } from 'devicons-react';
 import LaunchRoundedIcon from '@mui/icons-material/LaunchRounded';
 import EduSpaceImg from './assets/Register.png';
 import DungeonManiaImage from './assets/begin.png';
+import AirBrBImage from './assets/airbrb.png';
+import SeamsImage from './assets/seams.jpg';
 
 type ProjectInfoProps = {
   children: React.ReactNode;
@@ -73,71 +75,14 @@ const ProjectInfo = ({ children, id }: ProjectInfoProps) => {
   return (
     <Box
       sx={{
-        display: 'flex',
-        // flexDirection: 'column',
-        // justifyContent: 'space-between',
-        position: 'relative',
+        width: '100%',
+        height: '100%',
+        opacity: inViewProject === id ? 1 : 0,
+        transition: '0.5s linear',
+        position: 'absolute',
       }}
     >
-      {/* <Box
-        id="project-info"
-        sx={{
-          display: 'flex',
-          opacity: inViewProject === id ? 1 : 0,
-          transition: 'opacity',
-          position: 'absolute',
-          top: 0,
-          gap: '2rem',
-          height: '17rem',
-          width: '50vw',
-        }}
-      >
-        {children}
-      </Box> */}
-      <Grid
-        container
-        sx={{
-          display: 'flex',
-          // flexDirection: 'column',
-          opacity: inViewProject === id ? 1 : 0,
-          transition: 'opacity',
-          position: 'absolute',
-          gap: '2rem',
-          pr: '2rem',
-          height: '100%',
-        }}
-      >
-        <Grid
-          item
-          xs={12}
-          sx={{ display: 'flex', gap: '2rem', height: '15rem' }}
-        >
-          {children}
-        </Grid>
-        <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <IconButton
-            aria-label="open-project"
-            sx={{ width: '15rem', height: '15rem' }}
-          >
-            <LaunchRoundedIcon
-              sx={{
-                width: '100%',
-                height: '100%',
-                color: '#B49EEB',
-              }}
-            />
-          </IconButton>
-        </Grid>
-      </Grid>
-      {/* <IconButton aria-label="delete" size="small">
-        <LaunchRoundedIcon
-          fontSize="inherit"
-          sx={{
-            color: '#B49EEB',
-            opacity: inViewProject === id ? 1 : 0,
-          }}
-        />
-      </IconButton> */}
+      {children}
     </Box>
   );
 };
@@ -146,41 +91,54 @@ export const EduSpace = ({ id }: InfoProps) => {
   return (
     <ProjectInfo id={id}>
       <Box
+        id="eduspace-info-grid"
         sx={{
-          width: '40%',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          gridTemplateRows: 'repeat(2, 1fr)',
+          width: '100%',
           height: '100%',
-          backgroundImage: `url(${EduSpaceImg})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPositionX: 'left',
-          backgroundPositionY: 'center',
-        }}
-      ></Box>
-      <Box
-        sx={{
-          flex: '1',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <Typography variant="body1" sx={{ color: 'white' }}>
-          Eduspace is a learning management system, handling tasks such as
-          course administration, documentation, and delivery of educational
-          materials. It is based off UNSW's education and management system for
-          courses.
-        </Typography>
-        <Box sx={{ display: 'flex', gap: '1rem' }}>
-          <LanguageBox colour={'#E0D3FF'}>
-            <DiReact color="#B49EEB" size="100%" />
-          </LanguageBox>
-          <LanguageBox colour={'#B49EEB'}>
-            <JavascriptPlain color="#E0D3FF" size="100%" />
-          </LanguageBox>
-          <LanguageBox colour={'#E0D3FF'}>
-            <FigmaPlain color="#B49EEB" size="70%" />
-          </LanguageBox>
+        <Box
+          sx={{
+            gridRow: '1/3',
+            gridColumn: '1/3',
+            backgroundImage: `url(${EduSpaceImg})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            bgcolor: '#74b3ff',
+          }}
+        />
+        <Box
+          sx={{
+            gridRow: '1/3',
+            gridColumn: '3/6',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            boxSizing: 'border-box',
+            px: '2rem',
+          }}
+        >
+          <Typography variant="body1" sx={{ color: 'white' }}>
+            Eduspace is a learning management system, handling tasks such as
+            course administration, documentation, and delivery of educational
+            materials. It is based off UNSW's education and management system
+            for courses.
+          </Typography>
+          <Box sx={{ display: 'flex', gap: '1rem' }}>
+            <LanguageBox colour={'#E0D3FF'}>
+              <DiReact color="#B49EEB" size="100%" />
+            </LanguageBox>
+            <LanguageBox colour={'#B49EEB'}>
+              <JavascriptPlain color="#E0D3FF" size="100%" />
+            </LanguageBox>
+            <LanguageBox colour={'#E0D3FF'}>
+              <FigmaPlain color="#B49EEB" size="70%" />
+            </LanguageBox>
+          </Box>
         </Box>
       </Box>
     </ProjectInfo>
@@ -190,30 +148,53 @@ export const EduSpace = ({ id }: InfoProps) => {
 export const Airbrb = ({ id }: InfoProps) => {
   return (
     <ProjectInfo id={id}>
-      <Box sx={{ width: '25rem', height: '100%', bgcolor: 'red' }}></Box>
       <Box
+        id="airbrb-info-grid"
         sx={{
-          flex: '1',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          gridTemplateRows: 'repeat(2, 1fr)',
+          width: '100%',
           height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <Typography variant="body1" sx={{ color: 'white' }}>
-          AirBrB is a person to person renting service, closely modelled off the
-          popular renting platform Airbnb. A frontend web project utilising
-          RESTful API to provide seamless communication between the front-end
-          and back-end components.
-        </Typography>
+        <Box
+          sx={{
+            gridRow: '1/3',
+            gridColumn: '1/3',
+            backgroundImage: `url(${AirBrBImage})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            bgcolor: 'white',
+          }}
+        />
+        <Box
+          sx={{
+            gridRow: '1/3',
+            gridColumn: '3/6',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            boxSizing: 'border-box',
+            px: '2rem',
+          }}
+        >
+          <Typography variant="body1" sx={{ color: 'white' }}>
+            AirBrB is a person to person renting service, closely modelled off
+            the popular renting platform Airbnb. A frontend web project
+            utilising RESTful API to provide seamless communication between the
+            front-end and back-end components.
+          </Typography>
 
-        <Box sx={{ display: 'flex', gap: '1rem' }}>
-          <LanguageBox colour={'#E0D3FF'}>
-            <DiReact color="#B49EEB" size="100%" />
-          </LanguageBox>
-          <LanguageBox colour={'#B49EEB'}>
-            <TypescriptPlain color="#E0D3FF" size="100%" />
-          </LanguageBox>
+          <Box sx={{ display: 'flex', gap: '1rem' }}>
+            <LanguageBox colour={'#E0D3FF'}>
+              <DiReact color="#B49EEB" size="100%" />
+            </LanguageBox>
+            <LanguageBox colour={'#B49EEB'}>
+              <TypescriptPlain color="#E0D3FF" size="100%" />
+            </LanguageBox>
+          </Box>
         </Box>
       </Box>
     </ProjectInfo>
@@ -224,66 +205,102 @@ export const Dungeonmania = ({ id }: InfoProps) => {
   return (
     <ProjectInfo id={id}>
       <Box
+        id="dungeonmania-info-grid"
         sx={{
-          width: '40%',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          gridTemplateRows: 'repeat(2, 1fr)',
+          width: '100%',
           height: '100%',
-          backgroundImage: `url(${DungeonManiaImage})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPositionX: 'left',
-          backgroundPositionY: 'top',
-        }}
-      ></Box>
-      <Box
-        sx={{
-          flex: '1',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <Typography variant="body1" sx={{ color: 'white' }}>
-          Dungeonmania is a web application game where the player must complete
-          various goals within a series of dungeons to complete the game! This
-          is a backend focused project to practice implementation of software
-          design principles and patterns to create well-maintained software
-          solutions.
-        </Typography>
-        <Box sx={{ display: 'flex', gap: '1rem' }}>
-          <LanguageBox colour={'#E0D3FF'}>
-            <JavaPlain color="#B49EEB" size="70%" />
-          </LanguageBox>
+        <Box
+          sx={{
+            gridRow: '1/3',
+            gridColumn: '1/3',
+            backgroundImage: `url(${DungeonManiaImage})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            bgcolor: '#1d1919',
+          }}
+        />
+        <Box
+          sx={{
+            gridRow: '1/3',
+            gridColumn: '3/6',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            boxSizing: 'border-box',
+            px: '2rem',
+          }}
+        >
+          <Typography variant="body1" sx={{ color: 'white' }}>
+            Dungeonmania is a web application game where the player must
+            complete various goals within a series of dungeons to complete the
+            game! This is a backend focused project to practice implementation
+            of software design principles and patterns to create well-maintained
+            software solutions.
+          </Typography>
+          <Box sx={{ display: 'flex', gap: '1rem' }}>
+            <LanguageBox colour={'#E0D3FF'}>
+              <JavaPlain color="#B49EEB" size="70%" />
+            </LanguageBox>
+          </Box>
         </Box>
       </Box>
     </ProjectInfo>
   );
 };
 
-export const Seams = ({ id }: InfoProps) => {
+export const Slackr = ({ id }: InfoProps) => {
   return (
     <ProjectInfo id={id}>
-      <Box sx={{ width: '25rem', height: '100%', bgcolor: 'red' }}></Box>
       <Box
+        id="slackr-info-grid"
         sx={{
-          flex: '1',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          gridTemplateRows: 'repeat(2, 1fr)',
+          width: '100%',
           height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
         }}
       >
-        <Typography variant="body1" sx={{ color: 'white' }}>
-          Seams is a communication tool for groups and teams to support the high
-          intensity learning environment of a hypothetical hexamester. It is
-          closely inspired by Microsoft Teams. This project aims to provide
-          experience with testing, developing and maintaining a backend server
-          in Python.
-        </Typography>
-        <Box sx={{ display: 'flex', gap: '1rem' }}>
-          <LanguageBox colour={'#E0D3FF'}>
-            <PythonPlain color="#B49EEB" size="70%" />
-          </LanguageBox>
+        <Box
+          sx={{
+            gridRow: '1/3',
+            gridColumn: '1/3',
+            backgroundImage: `url(${SeamsImage})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            bgcolor: '#a298ef',
+          }}
+        />
+        <Box
+          sx={{
+            gridRow: '1/3',
+            gridColumn: '3/6',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            boxSizing: 'border-box',
+            px: '2rem',
+          }}
+        >
+          <Typography variant="body1" sx={{ color: 'white' }}>
+            Slackr is a communication tool for groups and teams to support the
+            high intensity learning environment of a hypothetical hexamester. It
+            is closely inspired by Microsoft Teams. This project aims to provide
+            experience with testing, developing and maintaining a backend server
+            in Python.
+          </Typography>
+          <Box sx={{ display: 'flex', gap: '1rem' }}>
+            <LanguageBox colour={'#E0D3FF'}>
+              <PythonPlain color="#B49EEB" size="70%" />
+            </LanguageBox>
+          </Box>
         </Box>
       </Box>
     </ProjectInfo>
