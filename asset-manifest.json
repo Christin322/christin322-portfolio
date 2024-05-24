@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/christin322-portfolio/static/css/main.f855e6bc.css",
-    "main.js": "/christin322-portfolio/static/js/main.a496af1f.js",
-    "static/js/453.abd36b29.chunk.js": "/christin322-portfolio/static/js/453.abd36b29.chunk.js",
-    "static/media/exploded.svg": "/christin322-portfolio/static/media/exploded.b3d1f0b17dfb06e68f5d2c7a2228b9a3.svg",
-    "static/media/bedroom.svg": "/christin322-portfolio/static/media/bedroom.7a171d12e273adb27e45e0fad3906faf.svg",
-    "static/media/Register.png": "/christin322-portfolio/static/media/Register.905e97e69c43b3d20dba.png",
-    "static/media/exterior.svg": "/christin322-portfolio/static/media/exterior.ad188f5349d1dc14556ed5225d314756.svg",
-    "static/media/airbrb.png": "/christin322-portfolio/static/media/airbrb.06374b313280261d436d.png",
-    "static/media/interior.svg": "/christin322-portfolio/static/media/interior.61d9f4f8fac9afff7608853c4e79c129.svg",
-    "static/media/begin.png": "/christin322-portfolio/static/media/begin.4005d593d3ab870fdc7d.png",
-    "static/media/seams.jpg": "/christin322-portfolio/static/media/seams.94215fd1171511493280.jpg",
-    "static/media/livingRoom.svg": "/christin322-portfolio/static/media/livingRoom.3c8cd057f8d6be51daaa6344f6c44706.svg",
-    "index.html": "/christin322-portfolio/index.html",
-    "static/media/mask.svg": "/christin322-portfolio/static/media/mask.537342b5a9dfb699fbe7fe37604d1d95.svg",
-    "main.f855e6bc.css.map": "/christin322-portfolio/static/css/main.f855e6bc.css.map",
-    "main.a496af1f.js.map": "/christin322-portfolio/static/js/main.a496af1f.js.map",
-    "453.abd36b29.chunk.js.map": "/christin322-portfolio/static/js/453.abd36b29.chunk.js.map"
+    "main.css": "/Portfolio/static/css/main.f855e6bc.css",
+    "main.js": "/Portfolio/static/js/main.504fd61d.js",
+    "static/js/453.abd36b29.chunk.js": "/Portfolio/static/js/453.abd36b29.chunk.js",
+    "static/media/exploded.svg": "/Portfolio/static/media/exploded.b3d1f0b17dfb06e68f5d2c7a2228b9a3.svg",
+    "static/media/bedroom.svg": "/Portfolio/static/media/bedroom.7a171d12e273adb27e45e0fad3906faf.svg",
+    "static/media/Register.png": "/Portfolio/static/media/Register.905e97e69c43b3d20dba.png",
+    "static/media/exterior.svg": "/Portfolio/static/media/exterior.ad188f5349d1dc14556ed5225d314756.svg",
+    "static/media/airbrb.png": "/Portfolio/static/media/airbrb.06374b313280261d436d.png",
+    "static/media/interior.svg": "/Portfolio/static/media/interior.61d9f4f8fac9afff7608853c4e79c129.svg",
+    "static/media/begin.png": "/Portfolio/static/media/begin.4005d593d3ab870fdc7d.png",
+    "static/media/seams.jpg": "/Portfolio/static/media/seams.94215fd1171511493280.jpg",
+    "static/media/livingRoom.svg": "/Portfolio/static/media/livingRoom.3c8cd057f8d6be51daaa6344f6c44706.svg",
+    "index.html": "/Portfolio/index.html",
+    "static/media/mask.svg": "/Portfolio/static/media/mask.537342b5a9dfb699fbe7fe37604d1d95.svg",
+    "main.f855e6bc.css.map": "/Portfolio/static/css/main.f855e6bc.css.map",
+    "main.504fd61d.js.map": "/Portfolio/static/js/main.504fd61d.js.map",
+    "453.abd36b29.chunk.js.map": "/Portfolio/static/js/453.abd36b29.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.a496af1f.js"
+    "static/js/main.504fd61d.js"
   ]
 }
