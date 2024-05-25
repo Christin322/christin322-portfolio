@@ -295,7 +295,8 @@ function AboutMe() {
               </Tooltip>
               <Tooltip title="Resume" placement="top">
                 <IconButton
-                  sx={{ height: '3.5rem', width: '3.5rem' }}
+                  disabled
+                  sx={{ height: '3.5rem', width: '3.5rem', opacity: 0.5 }}
                   href="./resume.pdf"
                   target="_blank"
                 >

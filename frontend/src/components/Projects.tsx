@@ -113,8 +113,9 @@ const Projects = () => {
         </Box>
         <Box sx={{ gridRow: '5', gridColumn: '5' }}>
           <IconButton
+            disabled
             aria-label="open-project"
-            sx={{ width: '100%', height: '100%' }}
+            sx={{ width: '100%', height: '100%', opacity: 0.5 }}
           >
             <LaunchRoundedIcon
               sx={{
