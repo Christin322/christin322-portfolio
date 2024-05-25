@@ -16,8 +16,8 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import mask from './assets/mask.svg';
 import RotatingText from './RotatingText';
-import Exterior from './assets/exterior.svg';
-import Interior from './assets/interior.svg';
+import Exterior from './assets/exterior.png';
+import Interior from './assets/interior.png';
 
 const LandingPage = () => {
   const theme = useTheme();

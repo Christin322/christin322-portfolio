@@ -212,51 +212,67 @@ function AboutMe() {
                 transition: '0.4s linear',
               }}
             />
-            <Typography
-              variant="h4"
+            <Box
               sx={{
-                color: 'white',
-                // fontWeight: 'bold',
                 gridRow: '9',
-                gridColumn: '1/6',
+                gridColumn: '1/5',
                 border: 'solid white 2px',
                 borderLeft: 'none',
-                textAlign: 'center',
                 boxSizing: 'border-box',
                 ml: '-1rem',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-              CHRISTINE PHUNG
-            </Typography>
-            <Typography
-              variant="h4"
+              <Typography
+                variant="h4"
+                sx={{
+                  color: 'white',
+                  textAlign: 'center',
+                }}
+              >
+                CHRISTINE PHUNG
+              </Typography>
+            </Box>
+            <Box
               sx={{
-                color: 'white',
-                fontWeight: 'bold',
-                gridRow: '10',
-                gridColumn: '1/3',
-                borderRight: 'dashed white 2px',
-                textAlign: 'center',
+                gridRow: '9',
+                gridColumn: '5/9',
+
+                borderTop: 'solid white 2px',
+                borderBottom: 'dashed white 2px',
+                mr: '-1rem',
                 boxSizing: 'border-box',
-                ml: '-1rem',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-              CONTACTS
-            </Typography>
+              <Typography
+                variant="h4"
+                sx={{
+                  color: 'white',
+                  fontWeight: 'bold',
+                }}
+              >
+                CONTACTS
+              </Typography>
+            </Box>
             <Box
               id="contacts"
               sx={{
                 color: 'white',
-                // fontWeight: 'bold',
                 width: '100%',
                 height: '100%',
                 gridRow: '10',
-                gridColumn: '3/6',
-                borderRight: 'solid white 2px',
+                gridColumn: '5/9',
                 boxSizing: 'border-box',
                 display: 'flex',
                 justifyContent: 'space-around',
                 alignItems: 'center',
+                mr: '-1rem',
+                flexWrap: 'wrap',
               }}
             >
               <Tooltip title="Github" placement="top">
@@ -300,34 +316,31 @@ function AboutMe() {
                 </IconButton>
               </Tooltip>
             </Box>
-
-            <Typography
-              variant="h4"
+            <Box
               sx={{
-                color: 'white',
-                gridRow: '9',
-                gridColumn: '6/9',
-                borderTop: 'solid white 2px',
-                borderBottom: 'solid white 2px',
-                textAlign: 'center',
-                mr: '-1rem',
-              }}
-            >
-              {isFirstFloor ? '1ST FLOOR' : 'GROUND FLOOR'}
-            </Typography>
-
-            <Typography
-              variant="h4"
-              sx={{
-                color: 'white',
                 gridRow: '10',
-                gridColumn: '6/9',
-                textAlign: 'center',
-                mr: '-1rem',
+                gridColumn: '1/5',
+
+                borderRight: 'solid white 2px',
+                ml: '-1rem',
+                boxSizing: 'border-box',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-              {isFirstFloor ? 'LIVING ROOM' : 'BEDROOM'}
-            </Typography>
+              <Typography
+                variant="h4"
+                sx={{
+                  color: 'white',
+                  textAlign: 'center',
+                }}
+              >
+                {isFirstFloor
+                  ? '1ST FLOOR: LIVING ROOM'
+                  : 'GROUND FLOOR: BEDROOM'}
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
