@@ -226,7 +226,7 @@ function AboutMe() {
               }}
             >
               <Typography
-                variant="h4"
+                variant="h5"
                 sx={{
                   color: 'white',
                   textAlign: 'center',
@@ -330,7 +330,7 @@ function AboutMe() {
               }}
             >
               <Typography
-                variant="h4"
+                variant="h5"
                 sx={{
                   color: 'white',
                   textAlign: 'center',
