@@ -11,7 +11,7 @@
 // import { useTheme } from './ThemeContext';
 'use client';
 import useMousePosition from '../utils/useMousePosition';
-import { Typography, Box, useTheme } from '@mui/material';
+import { Typography, Box, useTheme, useMediaQuery } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import mask from './assets/mask.svg';
@@ -21,6 +21,7 @@ import Interior from './assets/interior.png';
 
 const LandingPage = () => {
   const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   //   const navigate = useNavigate();
   //   const { mode } = useTheme();
@@ -51,9 +52,11 @@ const LandingPage = () => {
             width: '100%',
             height: '100%',
             display: 'flex',
+            flexDirection: smallScreen ? 'column-reverse' : 'row',
             justifyContent: 'center',
             alignItems: 'center',
             gap: '2rem',
+            bgcolor: 'red',
           }}
         >
           {/* text */}
@@ -145,6 +148,7 @@ const LandingPage = () => {
             width: '100%',
             height: '100%',
             display: 'flex',
+            flexDirection: smallScreen ? 'column-reverse' : 'row',
             justifyContent: 'center',
             alignItems: 'center',
             gap: '2rem',
