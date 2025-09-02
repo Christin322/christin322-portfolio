@@ -56,7 +56,7 @@ const LandingPage = () => {
             justifyContent: 'center',
             alignItems: 'center',
             gap: '2rem',
-            bgcolor: 'red',
+            bgcolor: '#F4F1EC',
           }}
         >
           {/* text */}
