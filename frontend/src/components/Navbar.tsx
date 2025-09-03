@@ -64,15 +64,20 @@ const Navbar = () => {
             scrollToSection(section);
           }}
           sx={{
-            bgcolor: section === currPage ? 'black' : 'none',
+            bgcolor: section === currPage ? 'rgba(0, 0, 0, 0.9)' : 'rgba(244, 241, 236, 0.8)',
             color: section === currPage ? '#E0D3FF' : 'black',
             borderRadius: '3rem',
             boxSizing: 'border-box',
             paddingX: '2.5rem',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
             '&.MuiMenuItem-root': {
               '&:hover': {
-                backgroundColor: '#B49EEB',
+                backgroundColor: 'rgba(180, 158, 235, 0.9)',
                 color: 'white',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
               },
             },
           }}
