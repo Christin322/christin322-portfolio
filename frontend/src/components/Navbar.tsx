@@ -29,6 +29,33 @@ const Navbar = () => {
     }
   };
 
+  // Auto-update selected page based on scroll position
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of viewport
+      
+      // Check each section to see which one is currently in view
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const sectionId = sectionIds[i];
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const elementTop = element.offsetTop;
+          const elementBottom = elementTop + element.offsetHeight;
+          
+          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+            if (currPage !== sectionId) {
+              setCurrPage(sectionId);
+            }
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [currPage]);
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -71,7 +98,6 @@ const Navbar = () => {
             paddingX: '2.5rem',
             backdropFilter: 'blur(10px)',
             WebkitBackdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
             '&.MuiMenuItem-root': {
               '&:hover': {
                 backgroundColor: 'rgba(180, 158, 235, 0.9)',
