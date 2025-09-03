@@ -13,7 +13,7 @@
 import useMousePosition from '../utils/useMousePosition';
 import { Typography, Box, useTheme, useMediaQuery } from '@mui/material';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import mask from './assets/mask.svg';
 import RotatingText from './RotatingText';
 import Exterior from './assets/exterior.png';
@@ -25,10 +25,25 @@ const LandingPage = () => {
 
   //   const navigate = useNavigate();
   //   const { mode } = useTheme();
-  const { x, y } = useMousePosition();
   const [isHovered, setIsHovered] = useState(false);
-
+  const maskRef = useRef<HTMLDivElement>(null);
   const maskSize = isHovered ? 300 : 40;
+
+  // Update mask size on hover, but position via direct DOM updates
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (maskRef.current) {
+        const x = e.clientX;
+        const y = e.clientY;
+        maskRef.current.style.webkitMaskPosition = `${x - maskSize / 2}px ${y - maskSize / 2}px`;
+        maskRef.current.style.maskPosition = `${x - maskSize / 2}px ${y - maskSize / 2}px`;
+      }
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [maskSize]);
 
   return (
     <>
@@ -56,7 +71,7 @@ const LandingPage = () => {
             justifyContent: 'center',
             alignItems: 'center',
             gap: '2rem',
-            bgcolor: 'red',
+            bgcolor: '#F4F1EC',
           }}
         >
           {/* text */}
@@ -117,11 +132,7 @@ const LandingPage = () => {
       {/* mask */}
       <Box
         id="landing-section-background-mask"
-        component={motion.div}
-        animate={{
-          WebkitMaskPosition: `${x - maskSize / 2}px ${y - maskSize / 2}px`,
-        }}
-        transition={{ type: 'tween', ease: 'backOut' }}
+        ref={maskRef}
         sx={{
           width: '100vw',
           height: '90vh',
@@ -136,6 +147,10 @@ const LandingPage = () => {
           // padding: '1rem',
           top: 0,
           // mask stuff
+          WebkitMaskImage: `url(${mask})`,
+          WebkitMaskRepeat: 'no-repeat',
+          WebkitMaskSize: `${maskSize}px`,
+          WebkitMaskPosition: '50%',
           maskImage: `url(${mask})`,
           maskRepeat: 'no-repeat',
           maskSize: `${maskSize}px`,
@@ -163,12 +178,8 @@ const LandingPage = () => {
             }}
           >
             <Typography
-              onMouseEnter={() => {
-                setIsHovered(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovered(false);
-              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
               variant="h2"
               id="body"
               fontWeight="bold"
@@ -181,12 +192,8 @@ const LandingPage = () => {
               Hello, I'm
             </Typography>
             <Typography
-              onMouseEnter={() => {
-                setIsHovered(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovered(false);
-              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
               variant="h1"
               id="body"
               fontWeight="bold"
@@ -202,12 +209,8 @@ const LandingPage = () => {
 
             <Box
               height={'fit-content'}
-              onMouseEnter={() => {
-                setIsHovered(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovered(false);
-              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
               <RotatingText></RotatingText>
             </Box>
@@ -222,12 +225,8 @@ const LandingPage = () => {
           >
             <Box
               id="house-image-mask"
-              onMouseEnter={() => {
-                setIsHovered(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovered(false);
-              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
               sx={{
                 width: '30vw',
                 height: '60vh',
